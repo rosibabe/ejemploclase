@@ -1,0 +1,87 @@
+para entender el codigo
+railstutorial
+rails new loveblogging -d mysql
+
+cambiar la gema
+gem 'mysql2', '~> 0.3.20'
+
+bundle 
+
+Super importante  levantar el mysql
+sudo service mysql start
+rake db:create
+
+Creo la base de datos y listo
+Creo los objectos del blog con scaffold. CRUD creado para los objetos Blog y posts!
+SCAFFOLD blog 
+ rails g scaffold blog name:string about:string
+SCAFFOLD post
+rails g scaffold post title:string content:string blog:references
+
+
+Active Record y ORM
+ Active Record facilitates the creation and use of business objects whose data requires persistent storage to a database.
+ORM - Object relational Mapping -Object-Relational Mapping, commonly referred to as its abbreviation ORM, is a technique that connects the rich objects of an application to tables in a relational database management system. 
+rake db:migrate
+
+rails server -b $IP -p $PORT
+
+
+
+Tiene que haber levantado todo Ok! 
+
+
+y cuando hayas hecho el cambio blogs do posts 
+
+
+resources:blogs do 
+resources:posts
+rake routes
+
+
+para que los blogs referencien a los posts
+
+
+correr /blogs
+/posts
+
+---
+agregar 
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
+bundle
+ rails g bootstrap:install less
+
+
+inicias
+rails s -b $PORT -p $IP
+
+
+GIT
+Creamos nuestro proyecto en github
+lo clonamos en el Cloud 9
+Agregamos los archivos luego de copiarlos
+Git status siempre nos da la referencia de qué realizar! ojo :D
+push para subirlo al archivo remoto y listo! :D
+
+Codigo copy paste:
+Creado el nuevo repositorio
+creo el directorio
+ mkdir cloneexample
+entrar a la carpeta creada
+clone el repositorio
+git add . no va a agregar nada debes crear un branch del master :)
+git checkout -b main_menu (tu nuevo branch)
+copias todo dentro de la carpeta en la que quieres colaborar
+git add .
+luego lo agregas al repositorio remoto
+git merge main_menu
+
+COMMIT!
+commit -m  "descripion de quien fue el culpable"
+git push origin master
+
+
+
